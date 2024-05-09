@@ -1,4 +1,4 @@
-package demoProject;
+package demoProject_copy;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
@@ -49,6 +49,8 @@ public class Basics {
 		String getResponse = given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeId).when().get("maps/api/place/get/json").then().assertThat().statusCode(200)
 				.extract().response().asString();
 		System.out.println(getResponse);
+		System.out.println("Git Practice print");
+		System.out.println("Git Practice print_dpa");
 		
 		JsonPath js1 = reUsable.ToJson(getResponse);
 		String longitude = js1.getString("location.longitude");
